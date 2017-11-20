@@ -25,3 +25,31 @@ class LoginForm(forms.Form):
         'class':'form-control',
         'placeholder':"Enter password here"
     }))
+
+
+class RegisterForm(forms.Form):
+    username = forms.CharField(widget = forms.TextInput(attrs={
+    'class': 'form-control',
+    'placeholder': 'Enter your name here'
+}))
+
+    email = forms.EmailField(widget = forms.EmailInput(attrs={
+        'class':'form-control',
+        'placeholder':'Type your Email here'
+    }))
+
+    password = forms.CharField(widget = forms.PasswordInput(attrs={
+        'class':'form-control',
+        'placeholder':"Enter password here"
+    }))
+    password2 = forms.CharField(widget = forms.PasswordInput(attrs={
+        'class':'form-control',
+        'placeholder':"Re-Enter password here"
+    }))
+    def clean(self):
+        data = self.cleaned_data
+        password = self.cleaned_data.get('password')
+        password2 = self.cleaned_data.get('password2')
+        if password2 != password:
+            raise forms.ValidationError("Password must match")
+        return data
