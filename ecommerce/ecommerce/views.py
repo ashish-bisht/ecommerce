@@ -39,7 +39,7 @@ def login_page(request):
         'form':form
     }
     print(request.user.is_authenticated())
-    if form.is_valid:
+    if form.is_valid():
         print(form.cleaned_data)
     
     return render(request,'auth/login.html',context)
