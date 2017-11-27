@@ -37,7 +37,7 @@ def contact_page(request):
     #     print(request.POST.get('email'))
     #     print(request.POST.get('content'))
 
-    return render(request, 'contact.html', context)
+    return render(request, 'contact/view.html', context)
 
 
 def login_page(request):
