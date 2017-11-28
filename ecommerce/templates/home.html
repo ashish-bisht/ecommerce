@@ -1,18 +1,15 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+{% block content %}
+  
     <title>Document</title>
-</head>
-<body>
+
    <h1> {{ title }} </h1>
     {{ content }}
     <h1>Woo It came</h1>
     <img src="{% static 'image/download.png' %}" alt="some problem" class="img-fluid">
 
 
-</body>
-</html>
+{% endblock content %}
