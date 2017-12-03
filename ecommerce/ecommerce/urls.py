@@ -22,6 +22,7 @@ from django.contrib import admin
 
 
 from .views import home_page, about_page, contact_page, login_page, register_page
+from carts.views import cart_home
 
 urlpatterns = [
     url(r'^$', home_page,name='home'),
@@ -32,6 +33,7 @@ urlpatterns = [
     url(r'^products/', include("products.urls", namespace = 'products')),
     url(r'^search/', include("search.urls", namespace = 'search')),
     url(r'^admin/', admin.site.urls),
+    url(r'^cart/$',cart_home,name='cart')
 ]
 
 
